@@ -1,0 +1,112 @@
+:root {
+    --bg-color: #adcae7;
+    --white-color: #fff;
+    --primary-color: #733FC8;
+    --primary-accent-color: #A775F1;
+    --secondary-color: #48556A;
+    --tertiary-color: #19202D;
+    --lightest-gray-color: #CFCFCF; 
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    margin: 4em auto;
+    color: var(--white-color);
+}
+
+h2, p {
+    margin: 0;
+    padding: 0 0 0 0; /* padding of each h2 and p tags- set for top */
+}
+
+.container {
+    max-width: 1400px;
+    height: auto;
+    margin: 0 auto;
+
+    /* display: flex;
+    flex-direction: column; */
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "card1 card1 card2 card3"
+        "card4 card5 card5 card3";
+}
+
+.card {
+    border-radius: 10px;
+    padding: 2em;
+    margin: 1em;
+
+    display: grid;
+    align-items: flex-end; /* checked inspect to see what work */
+    grid-template-columns: 45px auto;
+    grid-template-rows: 20px 20px auto auto;
+    grid-template-areas:
+        "img title"
+        "img bio"
+        "heading heading"
+        "info info";
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3)
+}
+
+.card1 {
+    background-color: var(--primary-color);
+    grid-area: card1;
+}
+.card2 {
+    background-color: var(--secondary-color);
+    grid-area: card2;
+}
+.card3 {
+    background-color: var(--white-color);
+    color: var(--tertiary-color);
+    grid-area: card3;
+}
+.card4 {
+    background-color: var(--white-color);
+    color: var(--tertiary-color);
+    grid-area: card4;
+}
+.card5 {
+    background-color: var(--tertiary-color);
+    grid-area: card5;
+}
+
+/* card children styling */
+.card-img {
+    grid-area: img;
+    height: 35px;
+    width: auto;
+    border-radius: 100px;
+    border: solid 1px var(--primary-accent-color);    
+}
+
+.card-title {
+    grid-area: title;
+    font-size: 1em;
+}
+
+.card-bio {
+    grid-area: bio;
+    opacity: 50%;
+}
+
+.card-heading {
+    grid-area: heading;
+}
+
+.card-info {
+    grid-area: info;
+    opacity: 70%;
+    font-size: 1.2em;
+}
+
